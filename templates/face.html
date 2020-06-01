@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+</head>
+<body>
+    <form method='post' action="{{ url_for('getface',Istrain=1) }}"> 
+        <p>
+            輸入參數陣列(0,1,2,....):Json Type</br>
+            <textarea style="width:300px;height:100px;" name="parameterSet" >
+                {
+                    0  : 'Andy',
+                    1    : 'Jeff'
+                }
+                </textarea>
+        </p>
+        <p>
+        <button type='submit'>Train</button>
+        <button type="button" onclick="window.location.href='{{ url_for('getface',Istrain=0) }}';">Predict</button>
+    </p>    
+    </form>
+</body>
+</html>
